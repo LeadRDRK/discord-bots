@@ -1,0 +1,8 @@
+/dist
+/ballslua/dist
+/ballslua/lua/src/*.o
+/ballslua/lua/src/*.a
+/ballslua/lua/src/lua
+/ballslua/lua/src/luac
+/node_modules
+/docs

@@ -1,0 +1,79 @@
+.brand-name {
+    padding-left: 0.5rem;
+    font-weight: bold;
+    font-size: 1.4rem;
+    position: relative;
+    top: 1px;
+    color: unset;
+}
+.navbar-spacing {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+footer {
+    padding: 2rem 0;
+}
+.footer-text {
+    position: relative;
+    bottom: 8px;
+    font-size: 1rem;
+    font-style: italic;
+}
+.footer-logo {
+    height: 2rem;
+    position: relative;
+    left: -5px
+}
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+    margin-bottom: 1.5rem;
+}
+.fas {
+    padding-right: 5px;
+}
+.fab {
+    padding-right: 5px;
+}
+#main.is-dark th, #main.is-dark td {
+    border-bottom-color: rgb(54, 58, 85);
+}
+.navbar-item {
+    border-radius: 2px;
+    transition: 0.25s;
+}
+.navbar-item:hover {
+    background-color: #292929;
+}
+@media screen and (max-width: 1023px) {
+    .hero.is-dark .navbar-menu {
+        background-color: transparent;
+    }
+}
+.button {
+    transition: 0.25s;
+}
+.button:hover {
+    transform: scale(1.1) rotate(1deg);
+    margin-left: 0.5rem;
+    margin-right: 0.4rem;
+}
+#botInvite {
+    background-image: linear-gradient(to bottom right, #3273dc, #26539b);
+}
+#botServer {
+    background-image: linear-gradient(to bottom right, #00d1b2, #00947e); 
+}
+code {
+    background-color: #242424;
+}
+hr {
+    background-color: rgb(54, 58, 85);
+}
+#main {
+    background-image: linear-gradient(to bottom right, #121212, #071838)
+}
+#footer {
+    background-color: rgba(36, 36, 36, 0.6);
+}

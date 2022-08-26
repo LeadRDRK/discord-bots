@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>balls</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property=og:type content="website">
+    <meta property=og:url content="https://balls.leadrdrk.eu.org/">
+    <meta property=og:title content="balls">
+    <meta property=og:description content="commands">
+    <meta property=og:image content="https://balls.leadrdrk.eu.org/balls.png">
+    <meta name="title" content="balls">
+    <meta name="description" content="commands">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="common.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="common.js"></script>
+</head>
+
+<body>
+    <div id="main" class="hero is-fullheight is-dark">
+        <div class="hero-head">
+            <nav id="navbar" class="bd-navbar navbar navbar-spacing is-dark">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <div class="navbar-item">
+                            <img src="balls.png" style="max-height: 3rem;"></img>
+                            <a class="brand-name" href="/">balls</a>
+                            <a class="navbar-item is-hidden-desktop" onclick="toggleDarkMode()" title="Toggle dark mode"><i class="fas fa-moon"></i></a>
+                        </div>
+                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu" style="width: 4rem; height: 4rem">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <div id="navMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item" href="/"><i class="fas fa-home"></i>Home</a>
+                            <a class="navbar-item" href="/commands"><i class="fas fa-list"></i>Commands</a>
+                            <a class="navbar-item" href="/changelog"><i class="fas fa-sticky-note"></i>Changelog</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="hero-body" style="display: block;">
+            <section class="section">
+                <div class="container">
+                    <h3 class="title">Commands</h3>
+                    <b>Prefix:</b> <code>-</code><br>
+                    <br>
+                    Arguments in &lt;these quotes&gt; are required.<br>
+                    Arguments in [these quotes] are optional.<br>
+                    <br>
+                    <div style="overflow-x: auto;">
+                        <table class="table has-background-black-bis has-text-white">
+                            <thead>
+                                <tr>
+                                    <th class="has-text-grey-lighter" style="text-align:left">Command</th>
+                                    <th class="has-text-grey-lighter" style="text-align:left">Usage</th>
+                                    <th class="has-text-grey-lighter" style="text-align:left">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <% for (var command in helpContent) { %>
+                                <% var item = helpContent[command]; %> 
+                                <tr>
+                                    <td>
+                                        <%= command %>
+                                        <% if (item.experimental) { %>
+                                            <b><sup style="color: red;">[EXPERIMENTAL]</sup></b>
+                                        <% }; %>
+                                    </td>
+                                    <td>
+                                        <%= item.usage.replace("<input>", "") %>
+                                        <% if (item.usage.includes("<input>")) { %>
+                                            <a href="#input">&lt;input&gt;</a>
+                                        <% }; %>
+                                    </td>
+                                    <td>
+                                        <%- item.desc %>
+                                        <% if (item.aliases) { %>
+                                            <br>
+                                            <b>Aliases: </b><%= item.aliases.join(", ") %>
+                                        <% }; %>
+                                    </td>
+                                </tr>
+                            <% }; %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h3 class="title" id="input">Input</h3>
+                    What can you use as an input ?<br>
+                    <br>
+                    You can <b>attach a file</b>, or <b>include an url</b> to the file in your message. You can also
+                    <b>ping a user</b> or <b>include their user id</b> to use their avatar as an input. Or you can provide
+                    nothing and the bot will use the most recent file as input.<br>
+                    <br>
+                    All input files are limited to 12MiB in size (regardless if you have Nitro or not)
+                </div>
+            </section>
+        </div>
+        <div id="footer" class="hero-foot">
+            <div class="container is-spaced has-text-white has-text-centered">
+                <span class="footer-text">another fine product by</span> 
+                <a href="https://leadrdrk.eu.org/">
+                    <img src="https://files.leadrdrk.eu.org/assets/logo.png" class="footer-logo"></img>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
